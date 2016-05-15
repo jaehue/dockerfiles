@@ -1,0 +1,7 @@
+# eventstore
+
+## Run 
+
+```
+$ docker run -d -p 2113:2113 -p 1113:1113 jaehue/eventstore
+```
