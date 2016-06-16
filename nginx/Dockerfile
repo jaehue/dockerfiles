@@ -53,11 +53,6 @@ RUN cd /root \
  && ln -sf $OPENRESTY_PREFIX/luajit/bin/luajit-* /usr/local/bin/lua \
  && rm -rf /root/ngx_openresty*
 
-WORKDIR $NGINX_PREFIX/
-
-ONBUILD RUN rm -rf conf/* html/*
-ONBUILD COPY nginx $NGINX_PREFIX/
-
 # install consul-template
 RUN cd /tmp && \
     wget https://releases.hashicorp.com/consul-template/0.15.0/consul-template_0.15.0_linux_amd64.zip --no-check-certificate && \
@@ -82,7 +77,11 @@ RUN cd /tmp && \
 ENV GOPATH /go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
-WORKDIR $GOPATH
+
+WORKDIR $NGINX_PREFIX/
+
+ONBUILD RUN rm -rf conf/* html/*
+ONBUILD COPY nginx $NGINX_PREFIX/
 
 EXPOSE 80
 
