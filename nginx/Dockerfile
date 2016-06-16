@@ -67,16 +67,20 @@ RUN cd /tmp && \
     rm consul-template_0.15.0_linux_amd64.zip
 
 # install nginx-jwt
-ADD https://github.com/auth0/nginx-jwt/releases/download/v1.0.1/nginx-jwt.tar.gz /opt/openresty/nginx/lua
+RUN cd /tmp && mkdir -p /opt/openresty/nginx/lua && \
+    wget https://github.com/auth0/nginx-jwt/releases/download/v1.0.1/nginx-jwt.tar.gz --no-check-certificate && \
+    tar -C /opt/openresty/nginx/lua -xf nginx-jwt.tar.gz && \
+    rm nginx-jwt.tar.gz
 ENV JWT_SECRET="JWTs are the best!"
 
 ## install golang 1.6.2
 ENV GOLANG_VERSION 1.6.2
-ADD https://golang.org/dl/go$GOLANG_VERSION.linux-amd64.tar.gz /usr/local
-
+RUN cd /tmp && \
+    wget https://golang.org/dl/go$GOLANG_VERSION.linux-amd64.tar.gz --no-check-certificate && \
+    tar -C /usr/local -xzf go$GOLANG_VERSION.linux-amd64.tar.gz && \
+    rm go$GOLANG_VERSION.linux-amd64.tar.gz
 ENV GOPATH /go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
-
 RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 WORKDIR $GOPATH
 
