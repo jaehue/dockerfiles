@@ -81,7 +81,7 @@ RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 WORKDIR $NGINX_PREFIX/
 
 ONBUILD RUN rm -rf conf/* html/*
-ONBUILD COPY nginx $NGINX_PREFIX/
+#ONBUILD COPY nginx $NGINX_PREFIX/
 
 EXPOSE 80
 
