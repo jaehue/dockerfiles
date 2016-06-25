@@ -36,6 +36,8 @@ RUN cd /root \
     --with-http_ssl_module \
     --with-http_stub_status_module \
     --with-http_realip_module \
+    --with-stream \
+    --with-stream_ssl_module \
     --without-http_ssi_module \
     --without-http_userid_module \
     --without-http_fastcgi_module \
