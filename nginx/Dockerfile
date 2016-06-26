@@ -18,7 +18,7 @@ RUN cd \
   && wget https://github.com/pagespeed/ngx_pagespeed/archive/release-${NPS_VERSION}-beta.zip -O release-${NPS_VERSION}-beta.zip --no-check-certificate \
   && unzip release-${NPS_VERSION}-beta.zip \
   && cd ngx_pagespeed-release-${NPS_VERSION}-beta/ \
-  && wget https://dl.google.com/dl/page-speed/psol/${NPS_VERSION}.tar.gz \
+  && wget https://dl.google.com/dl/page-speed/psol/${NPS_VERSION}.tar.gz --no-check-certificate \
   && tar -xzvf ${NPS_VERSION}.tar.gz  # extracts to psol/
 
 # NginX prefix is automatically set by OpenResty to $OPENRESTY_PREFIX/nginx
