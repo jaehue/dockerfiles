@@ -11,15 +11,6 @@ ENV OPENRESTY_PREFIX /opt/openresty
 ENV NGINX_PREFIX /opt/openresty/nginx
 ENV VAR_PREFIX /var/nginx
 
-# download nginx-pagespeed module
-ENV NPS_VERSION 1.11.33.2
-RUN cd \
-  && wget https://github.com/pagespeed/ngx_pagespeed/archive/release-${NPS_VERSION}-beta.zip -O release-${NPS_VERSION}-beta.zip --no-check-certificate \
-  && unzip release-${NPS_VERSION}-beta.zip \
-  && cd ngx_pagespeed-release-${NPS_VERSION}-beta/ \
-  && wget https://dl.google.com/dl/page-speed/psol/${NPS_VERSION}.tar.gz --no-check-certificate \
-  && tar -xzvf ${NPS_VERSION}.tar.gz  # extracts to psol/
-
 # NginX prefix is automatically set by OpenResty to $OPENRESTY_PREFIX/nginx
 # look for $ngx_prefix in https://github.com/openresty/ngx_openresty/blob/master/util/configure
 
@@ -54,7 +45,6 @@ RUN cd /root \
     --without-http_uwsgi_module \
     --without-http_scgi_module \
     --without-http_memcached_module \
-    --add-module=$HOME/ngx_pagespeed-release-${NPS_VERSION}-beta \
     -j${NPROC} \
  && echo "==> Building OpenResty..." \
  && make -j${NPROC} \
