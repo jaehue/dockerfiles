@@ -1,11 +1,10 @@
-FROM ubuntu:16.04
+FROM alpine:latest
 
-RUN apt-get update \
- && apt-get install -y --no-install-recommends \
-    curl perl make build-essential procps \
-    libreadline-dev libncurses5-dev libpcre3-dev libssl-dev \
-    git wget unzip \
- && rm -rf /var/lib/apt/lists/*
+RUN apk update \
+ && apk add --virtual build-deps \
+    make gcc musl-dev \
+    pcre-dev openssl-dev zlib-dev ncurses-dev readline-dev \
+    curl perl git wget unzip 
 
 ENV OPENRESTY_VERSION 1.9.15.1
 ENV OPENRESTY_PREFIX /opt/openresty
