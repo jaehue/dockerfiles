@@ -20,4 +20,6 @@ RUN go get github.com/codegangsta/negroni && \
     go get golang.org/x/oauth2 && \
     go get gopkg.in/yaml.v2 && \
     go get github.com/fatih/structs && \
-    go get github.com/jaehue/anyq
+    go get github.com/jaehue/anyq && \
+    go get gopkg.in/mgo.v2 && \
+    go get github.com/Sirupsen/logrus
