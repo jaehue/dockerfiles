@@ -1,4 +1,4 @@
-FROM golang:1.6.3
+FROM golang:1.7
 MAINTAINER jaehue@jang.io
 
 # install go package
@@ -22,4 +22,5 @@ RUN go get github.com/codegangsta/negroni && \
     go get github.com/fatih/structs && \
     go get github.com/jaehue/anyq && \
     go get gopkg.in/mgo.v2 && \
-    go get github.com/Sirupsen/logrus
+    go get github.com/Sirupsen/logrus && \
+    go get github.com/pressly/sup/cmd/sup
