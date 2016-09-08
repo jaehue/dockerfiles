@@ -4,13 +4,13 @@ MAINTAINER jaehue@jang.io
 # install go package
 RUN go get github.com/urfave/negroni && \
     go get github.com/gorilla/mux && \
-   	go get github.com/gorilla/websocket && \
+    go get github.com/gorilla/websocket && \
     go get github.com/gorilla/handlers && \
     go get github.com/dgrijalva/jwt-go && \
-   	go get github.com/satori/go.uuid && \
-   	go get github.com/spf13/viper && \
-   	go get github.com/unrolled/render && \
-   	go get github.com/smartystreets/goconvey && \
+    go get github.com/satori/go.uuid && \
+    go get github.com/spf13/viper && \
+    go get github.com/unrolled/render && \
+    go get github.com/smartystreets/goconvey && \
     go get github.com/smartystreets/goconvey/convey && \
     go get github.com/jinzhu/configor && \
     go get github.com/streadway/amqp && \
@@ -25,7 +25,7 @@ RUN go get github.com/urfave/negroni && \
     go get github.com/jaehue/anyq && \
     go get gopkg.in/mgo.v2 && \
     go get github.com/Sirupsen/logrus && \
-    ge get github.com/Shopify/sarama && \
+    go get github.com/Shopify/sarama && \
     go get github.com/mitchellh/mapstructure && \
     go get github.com/jinzhu/gorm && \
     go get github.com/jinzhu/gorm/dialects/sqlite && \
