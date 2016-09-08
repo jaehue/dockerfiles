@@ -29,6 +29,7 @@ RUN go get github.com/urfave/negroni && \
     go get github.com/mitchellh/mapstructure && \
     go get github.com/jinzhu/gorm && \
     go get github.com/jinzhu/gorm/dialects/sqlite && \
+    go get github.com/jinzhu/gorm/dialects/mysql && \
     go get golang.org/x/net/context && \
     go get github.com/go-kit/kit/endpoint && \
     go get github.com/go-kit/kit/transport/http && \
