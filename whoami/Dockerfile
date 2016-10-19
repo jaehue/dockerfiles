@@ -1,4 +1,4 @@
-FROM golang:1.6
+FROM golang:1.7.1-alpine
 MAINTAINER jaehue@jang.io
 
 # add application
