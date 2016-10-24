@@ -4,7 +4,7 @@ MAINTAINER jang.jaehue@eland.co.kr
 USER root
 
 RUN apt-get update && \
-    apt-get -y install libsystemd-journal0
+    apt-get -y install libsystemd-journal0 jq
 
 COPY env/plugins.txt  /usr/share/jenkins/plugins.txt
 
