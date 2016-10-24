@@ -15,16 +15,13 @@ RUN curl -L "https://github.com/kelseyhightower/confd/releases/download/v$CONFD_
     chmod +x /usr/bin/confd
 ENV CONFD_OPTS '--backend=env --onetime'
 
-# This contains the repo for docker
-COPY root /
-
-# Add docker binaries directly
-RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
-RUN curl -L http://ftp.us.debian.org/debian/pool/main/a/apt/apt-transport-https_1.0.9.8.3_amd64.deb > /tmp/apt-transport-https_1.0.9.8.3_amd64.deb && dpkg -i /tmp/apt-transport-https_1.0.9.8.3_amd64.deb
-RUN apt-get update
-RUN apt-cache policy docker-engine
-RUN apt-get -y install docker-engine libsystemd-journal0 jq
+# install docker
+RUN \
+  curl -sSL https://get.docker.com/ | sh
 RUN curl -L https://github.com/docker/compose/releases/download/1.8.1/docker-compose-`uname -s`-`uname -m` > /usr/bin/docker-compose && chmod +x /usr/bin/docker-compose
+
+# install etc
+RUN apt-get -y install docker-engine libsystemd-journal0 jq
 
 COPY env/plugins.txt  /usr/share/jenkins/plugins.txt
 
