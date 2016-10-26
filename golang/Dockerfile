@@ -26,6 +26,7 @@ RUN go get github.com/urfave/negroni && \
     go get gopkg.in/mgo.v2 && \
     go get github.com/Sirupsen/logrus && \
     go get github.com/Shopify/sarama && \
+    go get github.com/bsm/sarama-cluster && \
     go get github.com/mitchellh/mapstructure && \
     go get github.com/jinzhu/gorm && \
     go get github.com/jinzhu/gorm/dialects/sqlite && \
