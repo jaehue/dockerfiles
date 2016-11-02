@@ -36,4 +36,5 @@ RUN go get github.com/urfave/negroni && \
     go get github.com/go-kit/kit/transport/http && \
     go get github.com/go-kit/kit/log && \
     go get github.com/rs/xid && \
-    go get github.com/pressly/sup/cmd/sup
+    go get github.com/pressly/sup/cmd/sup && \
+    go get github.com/garyburd/redigo/redis
