@@ -37,4 +37,8 @@ RUN go get github.com/urfave/negroni && \
     go get github.com/go-kit/kit/log && \
     go get github.com/rs/xid && \
     go get github.com/pressly/sup/cmd/sup && \
-    go get github.com/garyburd/redigo/redis
+    go get github.com/garyburd/redigo/redis && \
+    go get github.com/labstack/echo && \
+    go get github.com/labstack/echo/middleware && \
+    go get github.com/dghubble/sling && \
+    go get github.com/boltdb/bolt
