@@ -1,4 +1,4 @@
-FROM java:openjdk-8u111-jdk
+FROM java:openjdk-7u111-jdk
 MAINTAINER Jaehue Jang <jaehue@jang.io>
 
 # Setup env
