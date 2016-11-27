@@ -15,7 +15,7 @@ RUN wget -q -O - https://repo1.maven.org/maven2/com/facebook/presto/presto-serve
 RUN wget -q https://repo1.maven.org/maven2/com/facebook/presto/presto-cli/$PRESTO_VERSION/presto-cli-$PRESTO_VERSION-executable.jar \
  && mv presto-cli-$PRESTO_VERSION-executable.jar /usr/local/presto-server/bin/presto-cli
 
-RUN chown -R $PRESTO_USER:presto /usr/local/presto-server \
- && chmod +x /usr/local/presto-server/bin
+RUN chown -R $PRESTO_USER:presto /usr/local/presto-server-$PRESTO_VERSION \
+ && chmod +x /usr/local/presto-server-$PRESTO_VERSION/bin
 
 USER $PRESTO_USER
