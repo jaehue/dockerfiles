@@ -11,10 +11,10 @@ RUN wget -q -O - http://mirror.navercorp.com/apache/hive/hive-$HIVE_VERSION/apac
  && ln -s /usr/local/apache-hive-$HIVE_VERSION-bin /usr/local/apache-hive-bin
 
 # Setup permissions and ownership
-RUN chown -R $HADOOP_USER:hadoop /usr/local/apache-hive-$HIVE_VERSION-bin \
+RUN chown -R hadoop:hadoop /usr/local/apache-hive-$HIVE_VERSION-bin \
  && chmod -R 775 /usr/local/apache-hive-$HIVE_VERSION-bin/bin /usr/local/apache-hive-$HIVE_VERSION-bin/scripts
 
-USER $HADOOP_USER
+USER hadoop
 
 EXPOSE 10000
 EXPOSE 10002
