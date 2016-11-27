@@ -14,3 +14,5 @@ RUN wget -q -O - https://github.com/apache/nifi/archive/nifi-$NIFI_VERSION.tar.g
 
 RUN groupadd -r nifi && useradd -r -g nifi -G nifi nifi
  && chown nifi:nifi -R /usr/local/nifi-*
+
+USER nifi
