@@ -12,11 +12,10 @@ USER root
 RUN wget -q -O - https://repo1.maven.org/maven2/com/facebook/presto/presto-server/$PRESTO_VERSION/presto-server-$PRESTO_VERSION.tar.gz | tar -xzf - -C /usr/local \
  && ln -s presto-server-$PRESTO_VERSION /usr/local/presto-server
 
-WORKDIR /usr/local/presto-server
-
 RUN wget -q https://repo1.maven.org/maven2/com/facebook/presto/presto-cli/$PRESTO_VERSION/presto-cli-$PRESTO_VERSION-executable.jar \
-  && mv presto-cli-$PRESTO_VERSION-executable.jar /usr/local/presto-server/bin/presto-cli \
-  && chmod +x /usr/local/presto-server/bin/presto-cli \
-  && chown -R $PRESTO_USER:presto /usr/local/presto-server \
-  && chmod -R 775 /usr/local/presto-server/bin
-  
+ && mv presto-cli-$PRESTO_VERSION-executable.jar /usr/local/presto-server/bin/presto-cli
+
+RUN chown -R $PRESTO_USER:presto /usr/local/presto-server \
+ && chmod +x /usr/local/presto-server/bin
+
+USER $PRESTO_USER
