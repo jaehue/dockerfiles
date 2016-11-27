@@ -12,6 +12,5 @@ RUN wget -q -O - https://github.com/apache/nifi/archive/nifi-$NIFI_VERSION.tar.g
   && tar xzf /tmp/nifi-nifi-NIFI_VERSION/nifi-assembly/target/nifi-*-bin.tar.gz -C /usr/local \
   && rm -rf /tmp/nifi-nifi-$NIFI_VERSION
 
-RUN groupadd -r nifi \
- && useradd -r -g nifi nifi \
+RUN groupadd -r nifi && useradd -r -g nifi -G nifi nifi
  && chown nifi:nifi -R /usr/local/nifi-*
