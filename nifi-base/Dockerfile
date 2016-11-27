@@ -9,4 +9,4 @@ ENV NIFI_VERSION 1.1.0-RC2
 
 RUN wget -q -O - https://github.com/apache/nifi/archive/nifi-$NIFI_VERSION.tar.gz | tar -xzf - -C /usr/local \
   && cd /usr/local/nifi-nifi-$NIFI_VERSION \
-  && mvn clean install
+  && mvn clean install -Dmaven.test.skip=true
