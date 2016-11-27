@@ -4,9 +4,6 @@ MAINTAINER Jaehue Jang <jaehue@jang.io>
 # Setup env
 USER root
 ENV ZEPPELIN_USER zeppelin
-ENV ZEPPELIN_HOME /usr/local/zeppelin-bin-all
-ENV ZEPPELIN_LOG_DIR /log
-ENV ZEPPELIN_PID_DIR /run
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 ENV ZEPPELIN_VERSION 0.6.2
 
