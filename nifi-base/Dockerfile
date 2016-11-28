@@ -27,6 +27,7 @@ RUN wget -q -O - https://github.com/apache/nifi/archive/nifi-$NIFI_VERSION.tar.g
 RUN groupadd -r nifi && useradd -r -g nifi -G nifi nifi \
  && chown nifi:nifi -R $NIFI_HOME
 
+# remove npm
 RUN apt-get -qq -y remove build-essential nodejs npm
 
 USER nifi
