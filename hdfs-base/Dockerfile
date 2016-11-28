@@ -18,6 +18,9 @@ RUN chown -R hadoop:hadoop /usr/local/hadoop-$HADOOP_VERSION \
 
 USER hadoop
 
+# download mysql jdbc connector
+RUN wget -q -O - http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.40.tar.gz | tar -xzf - -C /usr/local/apache-hive-bin/lib
+
 # Namenode
 EXPOSE 8020 8022 50070 50470 50090 50495
 # DataNode
