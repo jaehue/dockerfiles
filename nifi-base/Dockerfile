@@ -13,7 +13,7 @@ RUN wget -q -O - https://github.com/apache/nifi/archive/nifi-$NIFI_VERSION.tar.g
   && tar xzf /tmp/nifi-nifi-$NIFI_VERSION/nifi-assembly/target/nifi-1.1.0-bin.tar.gz -C /usr/local \
   && rm -rf /tmp/nifi-nifi-$NIFI_VERSION
 
-RUN groupadd -r nifi && useradd -r -g nifi -G nifi nifi
+RUN groupadd -r nifi && useradd -r -g nifi -G nifi nifi \
  && chown nifi:nifi -R $NIFI_HOME
 
 RUN apt-get -qq -y remove build-essential nodejs npm
