@@ -5,6 +5,7 @@ RUN apt-get update && apt-get -qq -y install build-essential nodejs
 RUN apt-get -qq -y install npm
 
 ENV NIFI_VERSION 1.1.0-RC2
+ENV NIFI_HOME /usr/local/nifi-1.1.0
 
 RUN wget -q -O - https://github.com/apache/nifi/archive/nifi-$NIFI_VERSION.tar.gz | tar -xzf - -C /tmp \
   && cd /tmp/nifi-nifi-$NIFI_VERSION \
@@ -13,6 +14,10 @@ RUN wget -q -O - https://github.com/apache/nifi/archive/nifi-$NIFI_VERSION.tar.g
   && rm -rf /tmp/nifi-nifi-$NIFI_VERSION
 
 RUN groupadd -r nifi && useradd -r -g nifi -G nifi nifi
- && chown nifi:nifi -R /usr/local/nifi-1.1.0
+ && chown nifi:nifi -R $NIFI_HOME
+
+RUN apt-get -qq -y remove build-essential nodejs npm
 
 USER nifi
+
+CMD ["/usr/local/nifi-1.1.0/bin/nifi.sh", "start"]
