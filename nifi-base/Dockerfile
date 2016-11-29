@@ -34,4 +34,4 @@ USER nifi
 
 EXPOSE 8080
 
-CMD ["/usr/local/nifi-1.1.0/bin/nifi.sh", "start"]
+CMD ["/usr/local/nifi-1.1.0/bin/nifi.sh", "run"]
