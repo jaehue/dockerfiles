@@ -17,7 +17,9 @@ RUN chown -R hadoop:hadoop /usr/local/apache-hive-$HIVE_VERSION-bin \
 USER hadoop
 
 # download mysql jdbc connector
-RUN wget -q -O - http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.40.tar.gz | tar -xzf - -C /usr/local/apache-hive-bin/lib
+RUN wget -q -O - http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.40.tar.gz | tar -xzf - -C /tmp \
+ && mv /tmp/mysql-connector-java-5.1.40/mysql-connector-java-5.1.40-bin.jar /usr/local/apache-hive-bin/lib \
+ && rm -rf /tmp/mysql-connector-java-5.1.40
 
 EXPOSE 10000
 EXPOSE 10002
