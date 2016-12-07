@@ -10,3 +10,10 @@ RUN mkdir -p /usr/share/maven /usr/share/maven/ref \
 # install npm
 RUN apt-get update && apt-get -qq -y install build-essential nodejs
 RUN apt-get -qq -y install npm
+
+# build
+ADD ./package.json /app/package.json
+ADD ./pom.xml /app/pom.xml
+WORKDIR /app
+RUN mvn clean install -Dmaven.test.skip=true
+RUN npm i admin-lte --prefix src/main/resources/static
