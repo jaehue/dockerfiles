@@ -13,6 +13,7 @@ RUN apt-get -qq -y install npm
 
 # build
 ADD ./package.json /app/package.json
+ADD ./settings.xml /app/settings.xml
 ADD ./pom.xml /app/pom.xml
 WORKDIR /app
 RUN mvn clean install -Dmaven.test.skip=true
