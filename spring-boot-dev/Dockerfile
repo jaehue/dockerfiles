@@ -1,9 +1,9 @@
 FROM jaehue/spring-boot
 
-WORKDIR /app
-
 # sqljdbc4
-ADD repo.tar /app
+ADD ./repo.tar /root
+
+WORKDIR /app
 ADD ./pom.xml /app/pom.xml
 RUN mvn clean install -Dmaven.test.skip=true
 
