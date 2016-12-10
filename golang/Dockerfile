@@ -41,4 +41,5 @@ RUN go get github.com/urfave/negroni && \
     go get github.com/labstack/echo && \
     go get github.com/labstack/echo/middleware && \
     go get github.com/dghubble/sling && \
-    go get github.com/boltdb/bolt
+    go get github.com/boltdb/bolt && \
+    go get github.com/facebookgo/inject
