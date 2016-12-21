@@ -1,4 +1,4 @@
-FROM jenkins:2.19.1
+FROM jenkins:2.19.4
 MAINTAINER jang.jaehue@eland.co.kr
 
 USER root
