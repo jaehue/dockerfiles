@@ -18,11 +18,11 @@ RUN apt-get -qq -y install npm
 ENV NIFI_VERSION 1.1.1
 ENV NIFI_HOME /usr/local/nifi-1.1.1
 
-RUN wget -q -O - https://github.com/apache/nifi/archive/rel/nifi-1.1.1.tar.gz | tar -xzf - -C /tmp \
-  && cd /tmp/nifi-$NIFI_VERSION \
+RUN wget -q -O - https://github.com/apache/nifi/archive/rel/nifi-$NIFI_VERSION.tar.gz | tar -xzf - -C /tmp \
+  && cd /tmp/nifi-rel-nifi-$NIFI_VERSION \
   && mvn clean install -Dmaven.test.skip=true \
-  && tar xzf /tmp/nifi-$NIFI_VERSION/nifi-assembly/target/nifi-1.1.1-bin.tar.gz -C /usr/local \
-  && rm -rf /tmp/nifi-$NIFI_VERSION
+  && tar xzf /tmp/nifi-rel-nifi-$NIFI_VERSION/nifi-assembly/target/nifi-1.1.1-bin.tar.gz -C /usr/local \
+  && rm -rf /tmp/nifi-rel-nifi-$NIFI_VERSION
 
 RUN groupadd -r nifi && useradd -r -g nifi -G nifi nifi \
  && chown nifi:nifi -R $NIFI_HOME
