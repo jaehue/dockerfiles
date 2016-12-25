@@ -120,3 +120,5 @@ ant:1.4
 gradle:1.25
 github-organization-folder:1.5
 email-ext:2.53
+jackson2-api:2.7.3
+mercurial:1.57
