@@ -1,4 +1,4 @@
-FROM golang:1.8.1
+FROM golang:1.8
 MAINTAINER jaehue@jang.io
 
 # install go package
