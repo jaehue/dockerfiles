@@ -73,8 +73,8 @@ RUN cd /tmp && mkdir -p /opt/openresty/nginx/lua && \
     rm nginx-jwt.tar.gz
 ENV JWT_SECRET="JWTs are the best!"
 
-## install golang 1.6.2
-ENV GOLANG_VERSION 1.6.2
+## install golang 1.8.3
+ENV GOLANG_VERSION 1.8.3
 RUN cd /tmp && \
     wget https://golang.org/dl/go$GOLANG_VERSION.linux-amd64.tar.gz --no-check-certificate && \
     tar -C /usr/local -xzf go$GOLANG_VERSION.linux-amd64.tar.gz && \
