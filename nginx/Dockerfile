@@ -6,7 +6,7 @@ RUN apk update \
     pcre-dev openssl-dev zlib-dev ncurses-dev readline-dev \
     curl perl git wget unzip 
 
-ENV OPENRESTY_VERSION 1.9.15.1
+ENV OPENRESTY_VERSION 1.11.2.3
 ENV OPENRESTY_PREFIX /opt/openresty
 ENV NGINX_PREFIX /opt/openresty/nginx
 ENV VAR_PREFIX /var/nginx
