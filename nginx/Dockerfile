@@ -15,6 +15,9 @@ MAINTAINER jang.jaehue@eland.co.kr
 
 RUN apt-get update && apt-get -y upgrade
 RUN apt-get -qq -y install build-essential zlib1g-dev libpcre3-dev unzip wget uuid-dev curl
-RUN curl -f -L -sS https://ngxpagespeed.com/install > pagespped_install.sh
-RUN chmod 755 pagespped_install.sh
-RUN ./pagespped_install.sh --nginx-version latest
+ADD ./pagespeed_install.sh /tmp/
+RUN chmod 755 /tmp/pagespeed_install.sh && /tmp/pagespeed_install.sh --nginx-version latest
+# RUN chmod 755 /tmp/pagespped_install.sh
+# RUN curl -f -L -sS https://ngxpagespeed.com/install > pagespped_install.sh
+# RUN chmod 755 pagespped_install.sh
+# RUN ./pagespped_install.sh --nginx-version latest
