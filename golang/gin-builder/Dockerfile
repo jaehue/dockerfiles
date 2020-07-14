@@ -1,6 +1,12 @@
 FROM golang:1.13
 MAINTAINER jeff@blur.consulting
 
+ENV GO111MODULE=on
+WORKDIR /go/src/app
+COPY go.mod .
+COPY go.sum .
+RUN go mod download
+
 # install go package
 RUN go get github.com/Pallinder/go-randomdata && \
     go get github.com/dgrijalva/jwt-go && \
