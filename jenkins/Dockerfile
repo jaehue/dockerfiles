@@ -1,5 +1,7 @@
 FROM jenkins/jenkins:2.60.3
 
+USER root
+
 # install docker
 RUN apt-get update && \
     apt-get -y --no-install-recommends install apt-transport-https \
@@ -13,3 +15,5 @@ RUN apt-get update && \
 
 COPY env/plugins.txt /usr/share/jenkins/ref/
 RUN /usr/local/bin/plugins.sh /usr/share/jenkins/ref/plugins.txt
+
+USER jenkins
