@@ -1,7 +1,4 @@
-FROM node:14.5.0
-MAINTAINER bbugguj@gmail.com
+FROM node:15
 
-COPY package.json .
-COPY package-lock.json .
-COPY yarn.lock .
-RUN yarn install
+# set taobao source
+RUN yarn config set registry "https://registry.npm.taobao.org"
