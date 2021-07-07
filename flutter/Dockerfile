@@ -26,6 +26,7 @@ RUN mkdir /app
 WORKDIR /app
 RUN flutter create myapp
 WORKDIR /app/myapp
+COPY ./pubspec.* ./
 RUN flutter build web
 WORKDIR /
 RUN rm -rf /app
