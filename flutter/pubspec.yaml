@@ -39,67 +39,20 @@ dependencies:
   flutter_analog_clock: 
   flutter_highlight: 
   split_view:
+  fluttertoast:
+  flutter_colorpicker:
+  ai_progress:
   spannable_grid:
+  json_annotation:
+  flutter_markdown:
+    # web等环境
+  file_picker:
+  filepicker_windows:
+  image_picker:
   # gzx_dropdown_menu:
   flutter_quill:
-    git:
-      url: https://github.com/singerdmx/flutter-quill.git
-      path: .
   enum_to_string: ^2.0.1
   video_player: ^2.1.6
-  syncfusion_flutter_datagrid:
-    git:
-      url: http://192.168.5.166/weijw/syncfusion-flutter.git
-      path: flutter_datagrid
-  # syncfusion_flutter_calendar:
-  #   git:
-  #     url: http://192.168.5.166/weijw/syncfusion-flutter.git
-  #     path: flutter_calendar
-  # syncfusion_flutter_datepicker:
-  #   git:
-  #     url: http://192.168.5.166/weijw/syncfusion-flutter.git
-  #     path: flutter_datepicker
-  syncfusion_flutter_charts:
-    git:
-      url: http://192.168.5.166/weijw/syncfusion-flutter.git
-      path: flutter_charts
-  syncfusion_flutter_gauges:
-    git:
-      url: http://192.168.5.166/weijw/syncfusion-flutter.git
-      path: flutter_gauges
-  # syncfusion_flutter_sliders:
-  #   git:
-  #     url: http://192.168.5.166/weijw/syncfusion-flutter.git
-  #     path: flutter_sliders
-  # syncfusion_flutter_pdf:
-  #   git:
-  #     url: http://192.168.5.166/weijw/syncfusion-flutter.git
-  #     path: flutter_pdf
-  # syncfusion_flutter_barcodes:
-  #   git:
-  #     url: http://192.168.5.166/weijw/syncfusion-flutter.git
-  #     path: flutter_barcodes
-  # syncfusion_officechart:
-  #   git:
-  #     url: http://192.168.5.166/weijw/syncfusion-flutter.git
-  #     path: flutter_officechart
-  # syncfusion_flutter_maps:
-  #   git:
-  #     url: http://192.168.5.166/weijw/syncfusion-flutter.git
-  #     path: flutter_maps
-  # syncfusion_flutter_signaturepad:
-  #   git:
-  #     url: http://192.168.5.166/weijw/syncfusion-flutter.git
-  #     path: flutter_signaturepad
-  # syncfusion_flutter_pdfviewer:
-  #   git:
-  #     url: http://192.168.5.166/weijw/syncfusion-flutter.git
-  #     path: flutter_pdfviewer/syncfusion_flutter_pdfviewer
-  # syncfusion_flutter_treemap:
-  #   git:
-  #     url: http://192.168.5.166/weijw/syncfusion-flutter.git
-  #     path: flutter_treemap
-
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -108,6 +61,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  build_runner:
+  json_serializable:
 
 
 # For information on the generic Dart part of this file, see the
